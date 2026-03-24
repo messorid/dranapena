@@ -10,11 +10,11 @@ export const metadata = {
   openGraph: {
     title: "Dra Ana Maria Peña | Otorrinolaringólogo",
     description: "Especialista en oído, nariz y garganta en Venezuela",
-    url: "https://tudominio.com",
+    url: "https://www.otorrinoana.com",
     siteName: "Dra Ana Maria Peña",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image.jpeg",
         width: 1200,
         height: 630,
       },
