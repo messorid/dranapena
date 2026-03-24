@@ -7,19 +7,19 @@ import { useEffect, useRef, useState } from "react";
 
 const academicTimeline = [
   {
-    year: "2017",
+    year: "2019",
     title: "Título de Médico Cirujano",
     institution: "Universidad Nacional Experimental Rómulo Gallegos (UNERG)",
     description: "Formación de base con enfoque en medicina integral y social.",
   },
   {
-    year: "2021",
+    year: "2023",
     title: "Especialización en Otorrinolaringología",
     institution: "Universidad Central de Venezuela (UCV)",
     description: "Postgrado cursado con distinción académica.",
   },
   {
-    year: "2021-2023",
+    year: "2023-2025",
     title: "Práctica Clínica y Residencia",
     institution: "Hospital Universitario de Caracas (HUC)",
     description: "Atención especializada en uno de los centros de salud más exigentes del país.",
