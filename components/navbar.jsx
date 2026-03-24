@@ -49,7 +49,7 @@ export default function Navbar() {
           {[
             { name: "Inicio", href: "/" },
             { name: "Especialidades", href: "#services" },
-            { name: "Sobre la Doctora", href: "#about" },
+            { name: "Sobre la Doctora", href: "/sobre-mi" },
             { name: "FAQ", href: "#faq" }
           ].map((link) => (
             <Link 

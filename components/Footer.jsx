@@ -78,9 +78,9 @@ export default function Footer() {
 
               {/* Correo */}
               <li>
-                <a href="mailto:otorrinoana.olg@gmail.com" className="flex items-center justify-center md:justify-start gap-3 group">
+                <a href="mailto:otorrinoana.orl@gmail.com" className="flex items-center justify-center md:justify-start gap-3 group">
                   <svg className="w-5 h-5 text-[var(--color-primary)] shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                  <span className="text-slate-400 group-hover:text-white transition-colors">otorrinoana.olg@gmail.com</span>
+                  <span className="text-slate-400 group-hover:text-white transition-colors">otorrinoana.orl@gmail.com</span>
                 </a>
               </li>
 

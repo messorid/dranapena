@@ -26,7 +26,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Otorrinolaringólogo en Venezuela",
     description: "Consulta especializada en Barinas y Caracas",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.jpeg"],
   },
 };
 

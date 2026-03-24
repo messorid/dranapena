@@ -56,7 +56,7 @@ export default function FAQ() {
   }, []);
 
   return (
-    <section 
+    <section id="faq"
       ref={sectionRef} 
       className="w-full py-24 px-6 bg-slate-50 relative overflow-hidden"
     >
