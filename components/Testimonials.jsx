@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Enriquecemos los datos añadiendo el "tratamiento" para dar más contexto a los nuevos pacientes
 const testimonials = [
   {
     name: "María G.",
@@ -23,9 +22,12 @@ const testimonials = [
 
 export default function Testimonials() {
   const sectionRef = useRef(null);
+  const carouselRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isInteracting, setIsInteracting] = useState(false); // Para pausar si el usuario toca
 
-  // Animación al hacer scroll
+  // 1. Animación inicial al hacer scroll hacia la sección
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -41,12 +43,47 @@ export default function Testimonials() {
     return () => observer.disconnect();
   }, []);
 
+  // 2. Lógica de Carrusel Automático (Solo para móviles)
+  useEffect(() => {
+    // Si el usuario está tocando el carrusel, pausamos la animación
+    if (isInteracting) return;
+
+    const timer = setInterval(() => {
+      // Solo ejecutamos el auto-scroll en pantallas móviles (menor a 768px)
+      if (window.innerWidth >= 768 || !carouselRef.current) return;
+
+      const container = carouselRef.current;
+      const scrollLeft = container.scrollLeft;
+      const clientWidth = container.clientWidth;
+      const maxScroll = container.scrollWidth - clientWidth;
+
+      // Si llegamos al final, volvemos al inicio. Si no, avanzamos una tarjeta.
+      if (scrollLeft >= maxScroll - 10) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: clientWidth, behavior: "smooth" });
+      }
+    }, 4000); // Se mueve cada 4 segundos
+
+    return () => clearInterval(timer);
+  }, [isInteracting]);
+
+  // 3. Actualizar los "puntitos" (dots) cuando el carrusel se mueve
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const scrollPosition = carouselRef.current.scrollLeft;
+    const cardWidth = carouselRef.current.clientWidth;
+    // Calculamos qué tarjeta está en el centro
+    const newIndex = Math.round(scrollPosition / cardWidth);
+    setActiveIndex(newIndex);
+  };
+
   return (
-    <section ref={sectionRef} className="w-full py-24 px-6 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section ref={sectionRef} className="w-full py-24 bg-slate-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Heading Header */}
-        <div className={`text-center mb-16 md:mb-20 transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+        <div className={`text-center mb-12 md:mb-16 transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
           <span className="text-[var(--color-secondary)] font-semibold tracking-wider uppercase text-sm mb-3 block">
             Historias Reales
           </span>
@@ -58,13 +95,21 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Grid de Testimonios */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        {/* Contenedor del Carrusel / Grid */}
+        <div 
+          ref={carouselRef}
+          onScroll={handleScroll}
+          onTouchStart={() => setIsInteracting(true)} // Pausa al tocar
+          onTouchEnd={() => setIsInteracting(false)}  // Reanuda al soltar
+          onMouseEnter={() => setIsInteracting(true)} // Pausa al poner el mouse
+          onMouseLeave={() => setIsInteracting(false)} // Reanuda al quitar el mouse
+          className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 md:gap-10 md:pb-0 md:overflow-visible md:snap-none"
+        >
           {testimonials.map((item, index) => (
             <div
               key={index}
               style={{ transitionDelay: `${index * 150}ms` }}
-              className={`relative bg-white border border-slate-100 rounded-[2rem] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-15px_rgba(255,122,122,0.15)] transition-all duration-700 hover:-translate-y-2 flex flex-col ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}
+              className={`relative bg-white border border-slate-100 rounded-[2rem] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-15px_rgba(255,122,122,0.15)] transition-all duration-700 hover:-translate-y-2 flex flex-col shrink-0 w-[85vw] sm:w-[350px] snap-center md:w-auto md:shrink ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}
             >
               
               {/* Comillas Decorativas de Fondo */}
@@ -86,16 +131,13 @@ export default function Testimonials() {
                 "{item.text}"
               </p>
 
-              {/* Información del Paciente (Avatar + Nombre + Etiqueta) */}
+              {/* Información del Paciente */}
               <div className="flex items-center gap-4 mt-auto pt-6 border-t border-slate-50">
-                
-                {/* Avatar generado con la inicial */}
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-accent)]/10 to-[var(--color-primary)]/10 flex items-center justify-center shrink-0">
                   <span className="text-[var(--color-accent)] font-bold text-lg">
                     {item.name.charAt(0)}
                   </span>
                 </div>
-                
                 <div>
                   <p className="font-bold text-slate-900 leading-tight">
                     {item.name}
@@ -104,10 +146,23 @@ export default function Testimonials() {
                     {item.treatment}
                   </p>
                 </div>
-
               </div>
 
             </div>
+          ))}
+        </div>
+
+        {/* Indicadores (Dots) - Solo visibles en móvil */}
+        <div className="flex md:hidden justify-center items-center gap-2 mt-2">
+          {testimonials.map((_, index) => (
+            <div
+              key={index}
+              className={`transition-all duration-300 rounded-full ${
+                activeIndex === index 
+                  ? "w-6 h-2 bg-[var(--color-primary)]" 
+                  : "w-2 h-2 bg-slate-200"
+              }`}
+            />
           ))}
         </div>
 

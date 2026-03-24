@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-// 1. Agregamos la propiedad 'category' a cada servicio para el sistema de filtros
 const services = [
   {
     title: "Consulta Otorrinolaringológica",
@@ -48,7 +47,7 @@ const categories = ["Todos", "Oído", "Nariz", "Garganta", "General"];
 export default function Services() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeFilter, setActiveFilter] = useState("Todos"); // Estado para el filtro
+  const [activeFilter, setActiveFilter] = useState("Todos");
 
   // Animación al hacer scroll
   useEffect(() => {
@@ -84,12 +83,12 @@ export default function Services() {
             Servicios de Otorrinolaringología
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-            Atención clínica y quirúrgica especializada para niños y adultos. Desliza o selecciona una categoría para explorar.
+            Atención clínica y quirúrgica especializada para niños y adultos. Selecciona una categoría para explorar.
           </p>
         </div>
 
-        {/* Sistema de Filtros (Scrollable en móviles) */}
-        <div className={`flex overflow-x-auto pb-4 mb-8 -mx-6 px-6 md:mx-0 md:px-0 md:justify-center gap-3 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden transition-all duration-700 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+        {/* Sistema de Filtros */}
+        <div className={`flex overflow-x-auto pb-4 mb-4 -mx-6 px-6 md:mx-0 md:px-0 md:justify-center gap-3 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden transition-all duration-700 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           {categories.map((category) => (
             <button
               key={category}
@@ -105,21 +104,22 @@ export default function Services() {
           ))}
         </div>
 
+        {/* INDICADOR DE DESPLAZAMIENTO (SOLO MÓVIL) */}
+        <div className="flex md:hidden items-center justify-center gap-2 text-[var(--color-secondary)] text-sm mb-6 animate-pulse font-medium">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+          <span>Desliza para ver más tratamientos</span>
+        </div>
+
       </div>
 
-      {/* Grid / Carrusel Híbrido */}
-      {/* Explicación de clases:
-        - flex overflow-x-auto: Permite scroll horizontal en móviles.
-        - snap-x snap-mandatory: Hace que la tarjeta quede anclada al soltar el dedo.
-        - [-mx-6 px-6]: Truco CSS para que las tarjetas se asomen por los bordes de la pantalla en móvil.
-        - md:grid md:grid-cols-2 lg:grid-cols-3: Vuelve a ser un grid normal en PC.
-      */}
       <div className="max-w-7xl mx-auto">
-        <div className="flex overflow-x-auto gap-6 pb-12 pt-4 px-6 md:px-6 lg:px-8 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none">
+        <div className="flex overflow-x-auto gap-6 pb-12 pt-2 px-6 md:px-6 lg:px-8 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none">
           
           {filteredServices.map((service, index) => (
             <div
-              key={service.title} // Crucial para que React anime bien al filtrar
+              key={service.title} 
               style={{ animationDelay: `${index * 100}ms` }}
               className="group relative bg-white border border-slate-100 rounded-[2rem] p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(255,122,122,0.2)] overflow-hidden w-[85vw] sm:w-[320px] shrink-0 snap-center md:w-auto md:shrink flex flex-col animate-fade-in-up"
             >
@@ -158,7 +158,6 @@ export default function Services() {
             </div>
           ))}
 
-          {/* Estado vacío por si un filtro no tiene servicios (buena práctica UX) */}
           {filteredServices.length === 0 && (
             <div className="col-span-full py-12 text-center text-slate-500">
               No hay servicios disponibles en esta categoría actualmente.
