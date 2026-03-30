@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { waUrl } from "@/lib/contact";
 
 const services = [
   {
@@ -145,7 +146,7 @@ export default function Services() {
               {/* CTA Flotante inferior */}
               <div className="mt-auto pt-4 border-t border-slate-50">
                 <Link
-                  href={`https://wa.me/584140731821?text=Hola Dra. Ana, me gustaría agendar una cita para: ${service.title}`}
+                  href={waUrl(`Hola Dra. Ana, me gustaría agendar una cita para: ${service.title}`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-[var(--color-accent)] font-semibold text-sm hover:text-[var(--color-primary)] transition-colors group/link"

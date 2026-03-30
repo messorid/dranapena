@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link"; // AÑADIDO: Importamos Link de Next.js
+import Link from "next/link";
+import { waUrl } from "@/lib/contact";
 
 export default function AboutDoctor() {
   const videoRef = useRef(null);
@@ -126,7 +127,7 @@ export default function AboutDoctor() {
             
             {/* CTA Principal: WhatsApp */}
             <a
-              href="https://wa.me/584140731821"
+              href={waUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-primary)] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(255,122,122,0.4)] hover:-translate-y-1 w-full sm:w-auto text-center text-lg md:text-base lg:text-lg"

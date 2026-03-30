@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { waUrl } from "@/lib/contact";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +67,7 @@ export default function Navbar() {
         {/* CTA Desktop */}
         <div className="hidden md:block">
           <Link
-            href="https://wa.me/584140731821?text=Hola%20Dra.%20Ana%20Maria,%20quisiera%20agendar%20una%20consulta."
+            href={waUrl('Hola Dra. Ana Maria, quisiera agendar una consulta.')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[var(--color-primary)] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[var(--color-secondary)] transition-all duration-300 shadow-[0_4px_14px_rgba(255,122,122,0.3)] hover:shadow-[0_6px_20px_rgba(217,108,138,0.4)] hover:-translate-y-0.5"
@@ -114,7 +115,7 @@ export default function Navbar() {
           ))}
           
           <Link
-            href="https://wa.me/584140731821?text=Hola%20Dra.%20Ana%20Maria,%20quisiera%20agendar%20una%20consulta."
+            href={waUrl('Hola Dra. Ana Maria, quisiera agendar una consulta.')}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}

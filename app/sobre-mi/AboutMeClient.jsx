@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { waUrl } from "@/lib/contact";
 
 const academicTimeline = [
   {
@@ -145,7 +146,7 @@ export default function AboutMeClient() {
 
           <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row gap-4">
              <Link
-              href="https://wa.me/584140731821?text=Hola%20Dra.%20Ana%20Maria,%20vengo%20de%20su%20sitio%20web%20y%20me%20gustaría%20agendar%20una%20consulta."
+              href={waUrl('Hola Dra. Ana Maria, vengo de su sitio web y me gustaría agendar una consulta.')}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto text-center"
