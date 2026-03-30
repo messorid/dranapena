@@ -1,22 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { waUrl } from "@/lib/contact";
 
 export default function AboutDoctor() {
-  const videoRef = useRef(null);
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-
-  // Efecto para el Autoplay del video
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        console.log("Autoplay bloqueado por el navegador");
-      });
-    }
-  }, []);
 
   // Efecto para la animación al hacer scroll (Intersection Observer)
   useEffect(() => {
@@ -45,24 +36,23 @@ export default function AboutDoctor() {
     >
       <div className={`max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
 
-        {/* Columna Izquierda: Video con diseño editorial */}
+        {/* Columna Izquierda: Imagen */}
         <div className="relative w-full max-w-md mx-auto md:max-w-none group">
-          
-          {/* Elemento decorativo detrás del video */}
+
+          {/* Elemento decorativo detrás de la imagen */}
           <div className="absolute -inset-4 md:-inset-6 bg-[var(--color-secondary)]/10 rounded-[2.5rem] transform rotate-3 transition-transform duration-500 group-hover:rotate-6"></div>
-          
-          {/* Contenedor del video */}
+
+          {/* Contenedor de la imagen */}
           <div className="relative w-full h-[450px] md:h-[550px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50">
-            <video
-              ref={videoRef}
-              src="/videos/doctora.mp4"
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            <Image
+              src="/images/Drana.jpeg"
+              alt="Dra. Ana Maria Peña, Especialista en Otorrinolaringología"
+              fill
+              quality={75}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
             />
-            {/* Overlay elegante para mejorar el contraste visual */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent"></div>
           </div>
 
           {/* Badge Flotante */}
@@ -98,7 +88,7 @@ export default function AboutDoctor() {
           {/* Description */}
           <div className="space-y-4 text-slate-600 mb-8 md:text-lg font-light leading-relaxed">
             <p>
-              Médico especialista en el diagnóstico y tratamiento de enfermedades del <strong className="font-semibold text-slate-800">oído, nariz y garganta</strong>, ofreciendo atención integral y personalizada en Barinas y Caracas.
+              Médico especialista en el diagnóstico y tratamiento de enfermedades del <strong className="font-semibold text-slate-800">oído, nariz y garganta</strong>, ofreciendo atención especializada y personalizada en Barinas y Caracas.
             </p>
             <p>
               Su enfoque combina una sólida experiencia clínica, tecnología médica de vanguardia y, sobre todo, un trato humano y cercano para brindar soluciones efectivas que mejoren tu calidad de vida.
@@ -127,7 +117,7 @@ export default function AboutDoctor() {
             
             {/* CTA Principal: WhatsApp */}
             <a
-              href={waUrl()}
+              href={waUrl('Hola Dra. Ana Maria, vengo de su sitio web y quisiera consultar.')}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-primary)] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(255,122,122,0.4)] hover:-translate-y-1 w-full sm:w-auto text-center text-lg md:text-base lg:text-lg"

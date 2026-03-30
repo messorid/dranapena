@@ -67,7 +67,7 @@ export default function Navbar() {
         {/* CTA Desktop */}
         <div className="hidden md:block">
           <Link
-            href={waUrl('Hola Dra. Ana Maria, quisiera agendar una consulta.')}
+            href={waUrl('Hola Dra. Ana Maria, vengo de su sitio web y quisiera agendar una consulta.')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[var(--color-primary)] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[var(--color-secondary)] transition-all duration-300 shadow-[0_4px_14px_rgba(255,122,122,0.3)] hover:shadow-[0_6px_20px_rgba(217,108,138,0.4)] hover:-translate-y-0.5"
@@ -115,7 +115,7 @@ export default function Navbar() {
           ))}
           
           <Link
-            href={waUrl('Hola Dra. Ana Maria, quisiera agendar una consulta.')}
+            href={waUrl('Hola Dra. Ana Maria, vengo de su sitio web y quisiera agendar una consulta.')}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}

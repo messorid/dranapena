@@ -11,7 +11,7 @@ const academicTimeline = [
     year: "2019",
     title: "Título de Médico Cirujano",
     institution: "Universidad Nacional Experimental Rómulo Gallegos (UNERG)",
-    description: "Formación de base con enfoque en medicina integral y social.",
+    description: "Formación de base con enfoque en medicina general y social.",
   },
   {
     year: "2023",
@@ -104,7 +104,7 @@ export default function AboutMeClient() {
 
           <div className="space-y-6 text-slate-600 mb-14 md:text-lg font-light leading-relaxed max-w-2xl">
             <p>
-              Soy la Dra. Ana Maria Peña, médico cirujano apasionada por la <strong className="font-semibold text-slate-800">otorrinolaringología</strong>. Mi verdadera vocación es ayudarte a recuperar tu bienestar, abordando cada condición de oído, nariz y garganta con un enfoque integral que combina la precisión diagnóstica con la calidez humana.
+              Soy la Dra. Ana Maria Peña, médico cirujano apasionada por la <strong className="font-semibold text-slate-800">otorrinolaringología</strong>. Mi verdadera vocación es ayudarte a recuperar tu bienestar, abordando cada condición de oído, nariz y garganta con un enfoque especializado que combina la precisión diagnóstica con la calidez humana.
             </p>
             <p>
               Creo firmemente que la medicina debe ser tanto avanzada como cercana. Por eso, me mantengo en constante actualización académica y tecnológica, pero mi mayor prioridad siempre será escucharte con atención, entender tus inquietudes y diseñarte un tratamiento personalizado y efectivo que mejore tu calidad de vida de manera real.

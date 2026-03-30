@@ -58,7 +58,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-4 lg:gap-5 justify-center md:justify-start">
             <Link
-              href={waUrl()}
+              href={waUrl('Hola Dra. Ana Maria, vengo de su sitio web y quisiera agendar una consulta.')}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white px-8 py-4 lg:px-10 lg:py-5 rounded-full font-bold transition-all duration-300 shadow-[0_0_20px_rgba(255,122,122,0.4)] hover:-translate-y-1 text-base md:text-lg w-full sm:w-auto"

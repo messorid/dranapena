@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
         <Navbar/>
         {children}
         <Footer/>
+        <WhatsAppFloat/>
       </body>
 
     </html>

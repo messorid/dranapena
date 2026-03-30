@@ -57,7 +57,7 @@ export default function ContactCTA() {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
           
           <Link
-            href={waUrl('Hola Dra. Ana Maria, deseo agendar una consulta.')}
+            href={waUrl('Hola Dra. Ana Maria, vengo de su sitio web y deseo agendar una consulta.')}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center gap-2 bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.25)] hover:-translate-y-1 w-full sm:w-auto"

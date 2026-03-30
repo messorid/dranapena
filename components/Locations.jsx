@@ -81,7 +81,7 @@ export default function Locations() {
             <div className="absolute inset-0 bg-[var(--color-primary)] rounded-full animate-ping opacity-20"></div>
             
             <Link
-              href={waUrl('Hola, me gustaría saber la disponibilidad y dónde están atendiendo actualmente para agendar una cita.')}
+              href={waUrl('Hola Dra. Ana Maria, vengo de su sitio web. Me gustaría saber la disponibilidad y dónde están atendiendo para agendar una cita.')}
               target="_blank"
               rel="noopener noreferrer"
               className="relative flex items-center justify-center gap-3 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white px-8 py-5 rounded-full font-bold text-lg transition-all duration-300 shadow-[0_10px_30px_rgba(255,122,122,0.3)] hover:shadow-[0_15px_40px_rgba(217,108,138,0.5)] hover:-translate-y-1 w-full sm:w-auto"
