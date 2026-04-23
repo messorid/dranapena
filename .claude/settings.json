@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "c:\\Users\\Daniel\\Documents\\projects\\pena\\dr-ana-pena\\app\\articulos"
+    ],
+    "allow": [
+      "Bash(npx next *)"
+    ]
+  }
+}
