@@ -34,6 +34,19 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    // Caracas — a domicilio
+    {
+      url: "https://www.otorrinoana.com/otorrino-a-domicilio-en-caracas",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://www.otorrinoana.com/otorrinolaringologo-a-domicilio-en-caracas",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     // Caracas — landing
     {
       url: "https://www.otorrinoana.com/otorrinolaringologo-en-caracas",
