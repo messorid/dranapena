@@ -64,7 +64,7 @@ const services = [
 
 const steps = [
   { n: "1", title: "Escríbenos por WhatsApp", desc: "Cuéntanos tu caso y agenda tu cita de forma rápida y directa." },
-  { n: "2", title: "Confirma tu cita en Barinas", desc: "Coordinamos día, hora y consultorio más conveniente para ti." },
+  { n: "2", title: "Confirma tu cita en Barinas", desc: "Coordinamos día, hora y consultorio en la Unidad Quirúrgica del Centro." },
   { n: "3", title: "Ven a tu consulta", desc: "Recibe atención especializada, diagnóstico preciso y tratamiento personalizado." },
 ];
 
@@ -170,8 +170,8 @@ export default function SEOLandingBarinas({ heading, subheading, intro, faqs, wa
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               </div>
               <div>
-                <p className="text-slate-900 font-bold leading-none">Especialista</p>
-                <p className="text-slate-500 text-xs uppercase tracking-wider mt-1">ORL · Barinas</p>
+                <p className="text-slate-900 font-bold leading-none">Especialista ORL</p>
+                <p className="text-slate-500 text-xs tracking-wide mt-1">Unidad Quirúrgica del Centro</p>
               </div>
             </div>
           </div>

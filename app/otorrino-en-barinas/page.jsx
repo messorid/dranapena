@@ -29,8 +29,8 @@ export const metadata = {
 
 const faqs = [
   {
-    q: "¿Dónde encuentro un otorrino en Barinas?",
-    a: "La Dra. Ana Maria Peña es especialista en otorrinolaringología y ofrece consultas presenciales en Barinas. Contáctanos por WhatsApp para conocer disponibilidad y coordinar tu cita.",
+    q: "¿Dónde atiende el otorrino en Barinas?",
+    a: "La Dra. Ana Maria Peña atiende en la Unidad Quirúrgica del Centro en Barinas, con consultas presenciales una vez al mes. Escríbenos por WhatsApp para confirmar la próxima fecha disponible y agendar tu cita.",
   },
   {
     q: "¿Qué hace un otorrino?",
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto cuesta la consulta del otorrino en Barinas?",
-    a: "El costo de la consulta se confirma directamente por WhatsApp, donde también coordinamos el consultorio y la disponibilidad de fechas. Escríbenos para obtener toda la información.",
+    a: "El costo de la consulta se confirma directamente por WhatsApp, donde también coordinamos la próxima fecha disponible en la Unidad Quirúrgica del Centro. Escríbenos para obtener toda la información.",
   },
   {
     q: "¿El otorrino en Barinas atiende a niños?",

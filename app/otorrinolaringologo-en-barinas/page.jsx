@@ -30,7 +30,7 @@ export const metadata = {
 const faqs = [
   {
     q: "¿Hay otorrinolaringólogo en Barinas?",
-    a: "Sí. La Dra. Ana Maria Peña ofrece consultas presenciales de otorrinolaringología en Barinas. Escríbenos por WhatsApp para confirmar disponibilidad de fechas y coordinar el consultorio.",
+    a: "Sí. La Dra. Ana Maria Peña ofrece consultas presenciales de otorrinolaringología en Barinas, en la Unidad Quirúrgica del Centro, una vez al mes. Escríbenos por WhatsApp para confirmar la próxima fecha disponible.",
   },
   {
     q: "¿Qué enfermedades trata el otorrinolaringólogo en Barinas?",
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: "¿Cómo agendo una consulta de otorrinolaringología en Barinas?",
-    a: "Puedes agendar directamente por WhatsApp haciendo clic en cualquiera de los botones de esta página. Te responderemos a la brevedad para confirmar día, hora y consultorio.",
+    a: "Puedes agendar directamente por WhatsApp haciendo clic en cualquiera de los botones de esta página. Te confirmamos la próxima fecha disponible en la Unidad Quirúrgica del Centro, Barinas.",
   },
   {
     q: "¿Cuándo debo consultar al otorrinolaringólogo?",

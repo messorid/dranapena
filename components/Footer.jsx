@@ -66,7 +66,10 @@ export default function Footer() {
               {/* Ubicación */}
               <li className="flex items-start justify-center md:justify-start gap-3">
                 <svg className="w-5 h-5 text-[var(--color-primary)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                <span className="text-slate-400 text-center md:text-left">Atención previa cita en <br/> Caracas y Barinas</span>
+                <span className="text-slate-400 text-center md:text-left">
+                  Caracas: Clínica Amay · Clínica Bosque Ávila<br />
+                  Barinas: Unidad Quirúrgica del Centro
+                </span>
               </li>
               
               {/* Teléfono / WhatsApp */}
