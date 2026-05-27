@@ -65,12 +65,12 @@ export default function AboutMeClient() {
           
           <div className="relative w-full h-[500px] md:h-[650px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 bg-white">
             <Image
-              src="/images/hero-doctor.jpeg" 
+              src="/images/draana2.jpeg"
               alt="Dra. Ana Maria Peña, Otorrinolaringóloga"
               fill
               quality={95}
-              sizes="(max-w-768px) 100vw, 50vw"
-              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
             />
           </div>
 

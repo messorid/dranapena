@@ -43,16 +43,16 @@ export default function AboutDoctor() {
           <div className="absolute -inset-4 md:-inset-6 bg-[var(--color-secondary)]/10 rounded-[2.5rem] transform rotate-3 transition-transform duration-500 group-hover:rotate-6"></div>
 
           {/* Contenedor de la imagen */}
-          <div className="relative w-full h-[450px] md:h-[550px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50">
+          <div className="relative w-full h-[450px] md:h-[560px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50">
             <Image
-              src="/images/Drana.jpeg"
+              src="/images/dra-ana.jpeg"
               alt="Dra. Ana Maria Peña, Especialista en Otorrinolaringología"
               fill
-              quality={75}
+              quality={90}
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
           </div>
 
           {/* Badge Flotante */}
@@ -104,7 +104,7 @@ export default function AboutDoctor() {
               "Atención en Barinas"
             ].map((item, index) => (
               <li key={index} className="flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-sm border border-slate-100">
-                <div className="bg-[var(--color-accent)]/10 p-1.5 rounded-full text-[var(--color-accent)] shrink-0">
+                <div className="bg-[var(--color-primary)]/10 p-1.5 rounded-full text-[var(--color-primary)] shrink-0">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                 </div>
                 <span className="text-slate-700 font-medium text-sm md:text-base">{item}</span>
@@ -120,7 +120,7 @@ export default function AboutDoctor() {
               href={waUrl('Hola Dra. Ana Maria, vengo de su sitio web y quisiera consultar.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-primary)] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(255,122,122,0.4)] hover:-translate-y-1 w-full sm:w-auto text-center text-lg md:text-base lg:text-lg"
+              className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(255,122,122,0.3)] hover:shadow-[0_0_30px_rgba(255,122,122,0.5)] hover:-translate-y-1 w-full sm:w-auto text-center text-lg md:text-base lg:text-lg"
             >
               Consultar por WhatsApp
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

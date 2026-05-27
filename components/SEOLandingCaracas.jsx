@@ -53,7 +53,7 @@ export default function SEOLandingCaracas({ heading, subheading, intro, faqs, wa
       >
         {/* Imagen de fondo con overlay sofisticado */}
         <Image
-          src="/images/Drana.jpeg"
+          src="/images/dra-ana.jpeg"
           alt={heading}
           fill
           priority
@@ -144,7 +144,7 @@ export default function SEOLandingCaracas({ heading, subheading, intro, faqs, wa
             <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-primary)]/15 to-[var(--color-secondary)]/10 rotate-2 transition-transform duration-500 group-hover:rotate-4" />
             <div className="relative w-full h-[460px] md:h-[580px] rounded-3xl overflow-hidden shadow-2xl border border-slate-100">
               <Image
-                src="/images/Drana.jpeg"
+                src="/images/draana2.jpeg"
                 alt="Dra. Ana Maria Peña — Otorrinolaringóloga en Caracas"
                 fill
                 quality={90}

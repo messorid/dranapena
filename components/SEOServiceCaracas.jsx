@@ -116,7 +116,7 @@ export default function SEOServiceCaracas({
           <div>
             <div className="relative w-full h-64 md:h-80 rounded-3xl overflow-hidden mb-7 shadow-lg">
               <Image
-                src="/images/Drana.jpeg"
+                src="/images/draana2.jpeg"
                 alt="Dra. Ana Maria Peña — Especialista ORL Caracas"
                 fill
                 quality={80}
