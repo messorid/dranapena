@@ -56,7 +56,7 @@ export default function Locations() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
             Consultorios en{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
-              Caracas y Barinas
+              Barinas
             </span>
           </h2>
           <p className="text-slate-500 text-lg font-light max-w-xl mx-auto">
@@ -65,27 +65,27 @@ export default function Locations() {
         </div>
 
         {/* Cards */}
-        <div className={`grid md:grid-cols-3 gap-6 mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className={`grid md:grid-cols-2 gap-6 mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
 
-          {/* Barinas */}
+          {/* Barinas — Unidad Quirúrgica del Centro */}
           <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-7 flex flex-col gap-4 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-[var(--color-secondary)]/10 flex items-center justify-center shrink-0">
               <MapPinIcon className="w-6 h-6 text-[var(--color-secondary)]" />
             </div>
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-secondary)] mb-1 block">
-                Barinas
+                {LOCATIONS.barinas[0].city}
               </span>
               <h3 className="text-lg font-extrabold text-slate-900 leading-snug mb-2">
-                {LOCATIONS.barinas.name}
+                {LOCATIONS.barinas[0].name}
               </h3>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                {LOCATIONS.barinas.note}
+                {LOCATIONS.barinas[0].note}
               </span>
             </div>
             <a
-              href={LOCATIONS.barinas.mapsUrl}
+              href={LOCATIONS.barinas[0].mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-slate-500 hover:text-[var(--color-primary)] text-sm font-medium transition-colors mt-auto"
@@ -95,59 +95,28 @@ export default function Locations() {
             </a>
           </div>
 
-          {/* Caracas — Clínica Amay */}
+          {/* Sabaneta — Centro Médico Belén */}
           <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-7 flex flex-col gap-4 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-[var(--color-primary)]/10 flex items-center justify-center shrink-0">
               <MapPinIcon className="w-6 h-6 text-[var(--color-primary)]" />
             </div>
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] mb-1 block">
-                Caracas
+                {LOCATIONS.barinas[1].city}
               </span>
               <h3 className="text-lg font-extrabold text-slate-900 leading-snug mb-2">
-                {LOCATIONS.caracas[0].name}
+                {LOCATIONS.barinas[1].name}
               </h3>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Previa cita
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                {LOCATIONS.barinas[1].note}
               </span>
             </div>
             <a
-              href={LOCATIONS.caracas[0].mapsUrl}
+              href={LOCATIONS.barinas[1].mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-slate-500 hover:text-[var(--color-primary)] text-sm font-medium transition-colors mt-auto"
-            >
-              <ExternalIcon className="w-4 h-4" />
-              Ver en Google Maps
-            </a>
-          </div>
-
-          {/* Caracas — Clínica Bosque Ávila */}
-          <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-7 flex flex-col gap-4 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-            <div className="w-12 h-12 rounded-2xl bg-[var(--color-accent)]/10 flex items-center justify-center shrink-0">
-              <MapPinIcon className="w-6 h-6 text-[var(--color-accent)]" />
-            </div>
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-1 block">
-                Caracas
-              </span>
-              <h3 className="text-lg font-extrabold text-slate-900 leading-snug mb-2">
-                {LOCATIONS.caracas[1].name}
-              </h3>
-              <p className="text-slate-500 text-xs mb-2 font-light leading-relaxed">
-                {LOCATIONS.caracas[1].address}
-              </p>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Previa cita
-              </span>
-            </div>
-            <a
-              href={LOCATIONS.caracas[1].mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-slate-500 hover:text-[var(--color-accent)] text-sm font-medium transition-colors mt-auto"
             >
               <ExternalIcon className="w-4 h-4" />
               Ver en Google Maps
